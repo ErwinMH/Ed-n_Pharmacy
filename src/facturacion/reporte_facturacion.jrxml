@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e31b9a08-d772-4da0-a910-1bfb65e8173a">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="factura" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     detalle_factura_medicamento.`cod_detallefactura` AS detalle_factura_medicamento_cod_detallefactura,
+     detalle_factura_medicamento.`no_detallefactura` AS detalle_factura_medicamento_no_detallefactura,
+     detalle_factura_medicamento.`cod_medic` AS detalle_factura_medicamento_cod_medic,
+     detalle_factura_medicamento.`nom_medic` AS detalle_factura_medicamento_nom_medic,
+     detalle_factura_medicamento.`precio_unidad` AS detalle_factura_medicamento_precio_unidad,
+     detalle_factura_medicamento.`cant_medic` AS detalle_factura_medicamento_cant_medic,
+     factura_medicamento.`no_factura` AS factura_medicamento_no_factura,
+     factura_medicamento.`no_detallefactura` AS factura_medicamento_no_detallefactura,
+     factura_medicamento.`nom_emp` AS factura_medicamento_nom_emp,
+     factura_medicamento.`ID_cliente` AS factura_medicamento_ID_cliente,
+     factura_medicamento.`nom_cliente` AS factura_medicamento_nom_cliente,
+     factura_medicamento.`apellidos_cliente` AS factura_medicamento_apellidos_cliente,
+     factura_medicamento.`monto_total` AS factura_medicamento_monto_total,
+     factura_medicamento.`fecha_venta` AS factura_medicamento_fecha_venta
+FROM
+     edenpharmacy.detalle_factura_medicamento,
+   edenpharmacy.factura_medicamento
+WHERE 
+detalle_factura_medicamento.no_detallefactura = $P{factura} AND
+factura_medicamento.no_detallefactura = $P{factura}
+]]>
+	</queryString>
+	<field name="detalle_factura_medicamento_cod_detallefactura" class="java.lang.Integer"/>
+	<field name="detalle_factura_medicamento_no_detallefactura" class="java.lang.Integer"/>
+	<field name="detalle_factura_medicamento_cod_medic" class="java.lang.Integer"/>
+	<field name="detalle_factura_medicamento_nom_medic" class="java.lang.String"/>
+	<field name="detalle_factura_medicamento_precio_unidad" class="java.lang.Integer"/>
+	<field name="detalle_factura_medicamento_cant_medic" class="java.lang.Integer"/>
+	<field name="factura_medicamento_no_factura" class="java.lang.Integer"/>
+	<field name="factura_medicamento_no_detallefactura" class="java.lang.Integer"/>
+	<field name="factura_medicamento_nom_emp" class="java.lang.String"/>
+	<field name="factura_medicamento_ID_cliente" class="java.lang.Integer"/>
+	<field name="factura_medicamento_nom_cliente" class="java.lang.String"/>
+	<field name="factura_medicamento_apellidos_cliente" class="java.lang.String"/>
+	<field name="factura_medicamento_monto_total" class="java.lang.Integer"/>
+	<field name="factura_medicamento_fecha_venta" class="java.sql.Timestamp"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="180" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="100" height="97" uuid="79cbf4d4-bd15-4fc5-a47d-598d9d07ac16"/>
+				<imageExpression><![CDATA["C:\\Users\\Edwin Martinez\\Documents\\NetBeansProjects\\proyectosistemas\\src\\img\\logo_transparente.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="97" width="100" height="47" uuid="15d82882-449a-4d76-b357-91690e5937e6"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Santiago, Rep. Dom. La Villa Olímpica, Calle #8]]></text>
+			</staticText>
+			<rectangle radius="10">
+				<reportElement x="110" y="25" width="198" height="74" uuid="0e59fd34-7d17-4ff1-a439-a51c8cfc867c"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="110" y="5" width="101" height="20" uuid="f81e1d62-c4c0-46ac-a80a-41d46c02239d"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Datos Generales]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="124" y="39" width="66" height="20" uuid="62f45b1b-baa8-4e83-9ca5-c7bd41e4321e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[No. Factura:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="147" y="59" width="43" height="20" uuid="f99742b2-7a3d-4f4a-867d-d010d6d26270"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="190" y="39" width="100" height="20" uuid="d6b46a49-0451-4a52-aae7-2b3ed6aaef1f"/>
+				<textFieldExpression><![CDATA[$F{factura_medicamento_no_factura}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="59" width="100" height="20" uuid="82ad6e8f-577c-4e9e-8f59-ffdccd1c063c"/>
+				<textFieldExpression><![CDATA[$F{factura_medicamento_fecha_venta}]]></textFieldExpression>
+			</textField>
+			<rectangle radius="10">
+				<reportElement x="110" y="116" width="198" height="59" uuid="6fbeeb5c-b0f9-45a9-8132-23d16fc30a25"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement x="325" y="25" width="230" height="150" uuid="9f9a0846-3a1c-4770-9aec-5e06352e17c2"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="124" y="124" width="87" height="20" uuid="115eb87b-e50e-4027-8073-86db78598f9b"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Atendido por:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="124" y="144" width="100" height="20" uuid="79c6bff7-9b61-4bf8-a144-5c287349cfaf"/>
+				<textFieldExpression><![CDATA[$F{factura_medicamento_nom_emp}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="325" y="5" width="100" height="20" uuid="553530c4-dca1-44ce-8d12-919106be9906"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Datos del cliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="340" y="39" width="22" height="20" uuid="11619ddb-8aa8-47c7-a684-6973e3881978"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="340" y="77" width="50" height="20" uuid="e003fa15-5e5f-48a3-8c67-2155c2cbd1db"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="340" y="137" width="50" height="20" uuid="92f98e58-b467-4005-8143-6f4418dadac9"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Apellidos:]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="75" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="34" splitType="Stretch">
+			<textField>
+				<reportElement x="148" y="0" width="100" height="20" uuid="a49aa532-87b1-4ca0-8b85-beeb6fc36dc3"/>
+				<textFieldExpression><![CDATA[$F{detalle_factura_medicamento_nom_medic}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="d227af23-b2bb-4210-86d8-4c1604b1ebdb"/>
+				<textFieldExpression><![CDATA[$F{detalle_factura_medicamento_cod_medic}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="308" y="0" width="100" height="20" uuid="11a24676-4808-4153-b39d-f38eca4801ca"/>
+				<textFieldExpression><![CDATA[$F{detalle_factura_medicamento_precio_unidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="0" width="100" height="20" uuid="c4fe8e9c-5d6a-492b-ad16-d184c5f03a19"/>
+				<textFieldExpression><![CDATA[$F{detalle_factura_medicamento_cant_medic}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="33" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<line>
+				<reportElement x="290" y="0" width="100" height="1" uuid="f612280a-e81c-46a9-8b95-14e7d2741bf0"/>
+			</line>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

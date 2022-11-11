@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d4cff9be-4479-4154-a86a-dfe80f7639c1">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM medicamento]]>
+	</queryString>
+	<field name="cod_medic" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nom_medic" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cod_tipo_medic" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cant_medic" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="precio_compra" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="precio_venta" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ganancia_medic" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="100" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="100" height="100" uuid="f748aff2-ae50-4c90-a889-f7006219a047"/>
+				<imageExpression><![CDATA["C:\\Users\\Edwin Martinez\\Documents\\NetBeansProjects\\proyectosistemas\\src\\img\\logo.png"]]></imageExpression>
+			</image>
+			<rectangle>
+				<reportElement x="100" y="0" width="472" height="57" forecolor="#00986C" backcolor="#00986C" uuid="48ad4c81-e558-4b16-8922-e0d85714db97"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="100" y="57" width="472" height="43" forecolor="#EAEAEA" backcolor="#EAEAEA" uuid="c8071954-7d95-49cb-b1a2-2fd57d17cf6c"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="114" y="15" width="235" height="42" forecolor="#FFFFFF" uuid="6fa0e0ee-78d5-4aed-a272-4454a319ed07"/>
+				<textElement>
+					<font fontName="Broadway" size="26"/>
+				</textElement>
+				<text><![CDATA[Edén Pharmacy]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="114" y="69" width="123" height="20" uuid="fc67ca19-5bc7-454a-acfd-05be2420e5b5"/>
+				<textElement>
+					<font fontName="Britannic Bold" size="18"/>
+				</textElement>
+				<text><![CDATA[Medicamentos]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="41" width="28" height="20" uuid="2179b004-8152-47a4-9e10-fadf636600ce"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cód.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="28" y="41" width="209" height="20" uuid="b66a3995-95c8-47ca-acc5-8863ec132f99"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="237" y="41" width="60" height="20" uuid="77350fdb-e1d0-4761-935c-2400e0767613"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cód. Tipo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="297" y="41" width="34" height="20" uuid="91b17272-4ae8-4bb7-858c-167083947499"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cant.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="331" y="41" width="80" height="20" uuid="221237db-1b0d-4965-9d19-0ebff3ef7ca3"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Precio Venta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="410" y="41" width="91" height="20" uuid="2a22b9aa-5662-4f64-becc-2cb15b8904a8"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Precio Compra]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="501" y="41" width="71" height="20" uuid="7ea7310d-ffc1-40c7-ba57-983f7de76451"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ganancia]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="28" height="20" uuid="9c80ccb2-d2ae-4717-b04c-951af9303534"/>
+				<textFieldExpression><![CDATA[$F{cod_medic}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="28" y="0" width="209" height="20" uuid="a6338798-e970-4435-82d3-cbca1a10e2be"/>
+				<textFieldExpression><![CDATA[$F{nom_medic}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="237" y="0" width="60" height="20" uuid="facfeb23-caa4-432b-b025-26626baeadeb"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{cod_tipo_medic}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="297" y="0" width="34" height="20" uuid="fd188534-de5c-40fc-8090-3c07717ea764"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{cant_medic}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="331" y="0" width="80" height="20" uuid="784a1033-1665-4498-b6f0-d84f5d69cee5"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{precio_compra}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="411" y="0" width="90" height="20" uuid="32f9283e-6d13-447e-9d46-a120c891903e"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{precio_venta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="501" y="0" width="71" height="20" uuid="2b268fbb-beb8-42ba-b1d1-404db8640708"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{ganancia_medic}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
